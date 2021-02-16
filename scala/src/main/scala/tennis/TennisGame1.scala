@@ -24,7 +24,7 @@ object DisplayScore {
     val tieBreak = score1 >= 4 || score2 >= 4
     
     (score1, score2, difference, tieBreak) match {
-      case (_,_, 0, _) if score1 == score2 => drawing(score1)
+      case (_, _, 0, _) =>  drawing(score1)
       case (score1, score2, _, false) => basicScore(score1, score2)
       case (score1, score2, 1, true) => "Advantage player1"
       case (score1, score2, -1, true) => "Advantage player2"
