@@ -28,8 +28,8 @@ object DisplayScore {
       case (score1, score2, _, false) => basicScore(score1, score2)
       case (score1, score2, 1, true) => "Advantage player1"
       case (score1, score2, -1, true) => "Advantage player2"
-      case (_ , _, difference, true) if difference > 0  => "Win for player1"
-      case (_ , _, difference, true) if difference < 0 => "Win for player2"
+      case (_ , _, difference, true) if difference >= 2  => "Win for player1"
+      case (_ , _, difference, true) if difference <= -2 => "Win for player2"
     }
   }
 
